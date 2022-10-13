@@ -1,0 +1,31 @@
+<form [formGroup]="form">
+  <input
+    autofocus=""
+    id="username"
+    type="text"
+    formControlName="username"
+    placeholder="username"
+  />
+
+  <br />
+
+  <input
+    id="password"
+    type="password"
+    formControlName="password"
+    placeholder="Password"
+  />
+  <br />
+
+  <button [disabled]="!form.valid" (click)="login()">Login</button>
+</form>
+
+What is the expected behaviour?
+<br />
+When you click login and the call to the cloud functions,
+<br />I successull retrieve the data <br />BUT the cookie sent by Set-Cookie is
+not setted
+<br />
+(because I guess app domain and cloud functions domain are different )
+<br />So when i try to redirect to homepage my guard will not let me pass
+because no cookie found
